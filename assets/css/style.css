@@ -1,5 +1,6 @@
 /* change css2 to css for use google effects */
 @import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap&effect=anaglyph|fire-animation|3d|3d-float|emboss");
+@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap&effect=anaglyph");
 
 :root {
   --font-clr: #fff;
@@ -371,6 +372,8 @@ header .circle-logo {
   /* text-transform: uppercase; */
 
   transform-origin: 0 125px;
+
+  z-index: 2;
 }
 
 .circle-text span {
@@ -380,6 +383,56 @@ header .circle-logo {
   font-family: monospace;
 
   transform-origin: 0 125px;
+
+  z-index: 2;
+}
+
+.circle-box {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+
+  color: white;
+  background-color: var(--clr-pink-200);
+  font-family: "Berkshire Swash", cursive;
+  font-size: 2.5em;
+  border: 0.25rem solid var(--clr-pink-200);
+  border-radius: 50%;
+
+  outline: 0;
+  /* mix-blend-mode: hard-light; */
+  overflow: hidden;
+}
+
+.circle-box::before {
+  content: "TH";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-box::after {
+  content: "";
+  position: absolute;
+  background-color: var(--clr-grey-900);
+  width: 200%;
+  height: 200%;
+  bottom: -50%;
+  left: -50%;
+  border-radius: 45%;
+
+  animation: spin 6s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100%) rotate(500deg);
+  }
 }
 
 .banner {
@@ -399,8 +452,74 @@ header .circle-logo {
   border-radius: 1rem;
   box-shadow: 1px 2px 1px 0px var(--clr-teal-300);
 
-  animation: lineBorder 30s linear infinite;
+  /* animation: lineBorder 30s linear infinite; */
 }
+
+/* .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ripple {
+  position: relative;
+}
+
+.ripple::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: -80px;
+  border-radius: 100%;
+  border: 6px solid white;
+  transform: translate(0px) rotateX(80deg);
+
+  animation: ripple 2s linear infinite 1s;
+}
+
+.ripple::after {
+  animation: ripple 1.5s linear infinite 2s;
+}
+
+@keyframes ripple {
+  0% {
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+  }
+  100% {
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+  }
+}
+
+.drop {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: -250px;
+
+  background-color: var(--clr-pink-300);
+  margin-left: 30px;
+
+  border-radius: 100% 5% 100% 100%;
+
+  transform: rotate(-45deg);
+
+  animation: drop 2s linear infinite;
+}
+
+@keyframes drop {
+  100% {
+    top: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+} */
 .banner-content {
   position: relative;
   height: 90%;
