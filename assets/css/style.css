@@ -218,63 +218,31 @@
 
   --gradient-45: linear-gradient(
     45deg,
-    var(--clr-indigo-500),
-    var(--clr-pink-500),
-    var(--clr-red-500),
-    var(--clr-orange-500),
-    var(--clr-yellow-500),
-    var(--clr-green-500),
-    var(--clr-blue-500),
-    var(--clr-purple-500),
-    var(--clr-deep-purple-500),
-    var(--clr-brown-500),
-    var(--clr-grey-500),
-    var(--clr-blue-grey-500)
+    var(--clr-pink-300),
+    var(--clr-teal-300),
+    var(--clr-pink-300),
+    var(--clr-teal-300)
   );
   --gradient-500-45: linear-gradient(
     -45deg,
-    var(--clr-indigo-500),
-    var(--clr-pink-500),
-    var(--clr-red-500),
-    var(--clr-orange-500),
-    var(--clr-yellow-500),
-    var(--clr-green-500),
-    var(--clr-blue-500),
-    var(--clr-purple-500),
-    var(--clr-deep-purple-500),
-    var(--clr-brown-500),
-    var(--clr-grey-500),
-    var(--clr-blue-grey-500)
+    var(--clr-pink-300),
+    var(--clr-teal-300),
+    var(--clr-pink-300),
+    var(--clr-teal-300)
   );
   --gradient-135: linear-gradient(
     135deg,
-    var(--clr-indigo-500),
-    var(--clr-pink-500),
-    var(--clr-red-500),
-    var(--clr-orange-500),
-    var(--clr-yellow-500),
-    var(--clr-green-500),
-    var(--clr-blue-500),
-    var(--clr-purple-500),
-    var(--clr-deep-purple-500),
-    var(--clr-brown-500),
-    var(--clr-grey-500),
-    var(--clr-blue-grey-500)
+    var(--clr-pink-300),
+    var(--clr-teal-300),
+    var(--clr-pink-300),
+    var(--clr-teal-300)
   );
   --gradient-500-135: linear-gradient(
     -135deg,
-    var(--clr-indigo-500),
-    var(--clr-pink-500),
-    var(--clr-red-500),
-    var(--clr-orange-500),
-    var(--clr-yellow-500),
-    var(--clr-green-500),
-    var(--clr-blue-500),
-    var(--clr-purple-500),
-    var(--clr-deep-purple-500),
-    var(--clr-brown-500),
-    var(--clr-grey-500),
-    var(--clr-blue-grey-500)
+    var(--clr-pink-300),
+    var(--clr-teal-300),
+    var(--clr-pink-300),
+    var(--clr-teal-300)
   );
 
   --boxColor: var(--clr-teal-400);
