@@ -468,9 +468,57 @@ header .circle-logo {
   }
 }
 
-.container {
+.shadow-box {
+  position: relative;
   height: 40vh;
-  min-height: 40vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.25em;
+
+  overflow: hidden;
+}
+
+.shadow-box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+
+  /* background-color: white; */
+  z-index: -2;
+}
+
+.shadow-box::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+
+  /* background-color: white; */
+  z-index: -2;
+  filter: blur(5em);
+}
+
+.shadow-box::before,
+.shadow-box::after {
+  background: linear-gradient(
+    55deg,
+    var(--clr-pink-300),
+    var(--clr-grey-900),
+    var(--clr-teal-500)
+  );
+}
+
+.container {
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -480,13 +528,14 @@ header .circle-logo {
   font-size: 75px;
 
   border: none;
-  box-shadow: 1px 2px 3px white;
+  /* box-shadow: 1px 2px 3px white; */
 
-  perspective: 10em;
+  perspective: 7em;
   perspective-origin: 50% calc(50% - 2em);
 
   overflow: hidden;
 }
+
 .box {
   display: flex;
   height: 20vh;
