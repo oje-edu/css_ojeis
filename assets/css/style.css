@@ -747,6 +747,14 @@ header .circle-logo {
   box-shadow: 0 0 0.5em #000;
 }
 
+footer {
+  position: relative;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*
 .section1 {
   min-height: 30vh;
