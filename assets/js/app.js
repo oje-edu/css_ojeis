@@ -1,3 +1,8 @@
+function toggleBox() {
+  var element = document.getElementById("toggle");
+  element.style.display = element.style.display == "none" ? "flex" : "none";
+}
+
 const innertext = document.querySelector(".circle-logo p");
 innertext.innerHTML = innertext.innerText
   .split("")
