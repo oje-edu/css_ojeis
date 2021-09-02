@@ -339,7 +339,6 @@ header .circle {
   justify-content: center;
   align-items: center;
 
-  /* background-color: var(--clr-pink-100); */
   border-radius: 50%;
 }
 
@@ -347,10 +346,6 @@ header .circle-logo {
   position: absolute;
   width: 100%;
   height: 100%;
-  /* background-image: url(); */
-  /* background-size: cover; */
-  /* border-radius: 50%; */
-  /* filter: brightness(1.5) contrast(1.5); */
 
   user-select: none;
   animation: rotateInnerText 10s linear infinite;
@@ -401,8 +396,6 @@ header .circle-logo {
   left: 50%;
   font-size: 1em;
   font-weight: 900;
-
-  /* text-transform: uppercase; */
 
   transform-origin: 0 125px;
 
@@ -472,56 +465,41 @@ header .circle-logo {
 .shadow-box {
   display: none;
   position: relative;
-  height: 55vh;
-  width: 100%;
+  height: 50vh;
+
+  background: linear-gradient(55deg, var(--clr-pink-300), var(--clr-teal-500));
 
   /* display: flex; */
   justify-content: center;
   align-items: center;
 
-  padding: 0.25em;
-
-  overflow: hidden;
-}
-
-.shadow-box::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-
-  /* background-color: white; */
-  z-index: -2;
-}
-
-.shadow-box::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-
-  /* background-color: white; */
-  z-index: -2;
-  filter: blur(5em);
+  border-radius: 1em;
+  box-shadow: none;
+  isolation: isolate;
 }
 
 .shadow-box::before,
 .shadow-box::after {
-  background: linear-gradient(
-    55deg,
-    var(--clr-pink-300),
-    var(--clr-grey-900),
-    var(--clr-teal-500)
-  );
+  content: "";
+  position: absolute;
+
+  background: inherit;
+
+  inset: 0;
+  z-index: -1;
+}
+
+.shadow-box::before {
+  filter: blur(0.7em);
+}
+.shadow-box::after {
+  opacity: 0.4;
+  filter: blur(1em);
 }
 
 .container {
   height: 100%;
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -530,7 +508,6 @@ header .circle-logo {
   font-size: 75px;
 
   border: none;
-  /* box-shadow: 1px 2px 3px white; */
 
   perspective: 7em;
   perspective-origin: 50% calc(50% - 2em);
@@ -540,7 +517,7 @@ header .circle-logo {
 
 .box {
   display: flex;
-  height: 20vh;
+  height: 25vh;
   width: 100%;
 
   border: none;
@@ -748,19 +725,12 @@ header .circle-logo {
 }
 
 footer {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   height: 5vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/*
-.section1 {
-  min-height: 30vh;
-}
-
-.section2 {
-  min-height: 30vh;
-}
-*/
