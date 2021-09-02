@@ -1,6 +1,6 @@
 function toggleBox() {
   var element = document.getElementById("toggle");
-  element.style.display = element.style.display == "none" ? "flex" : "none";
+  element.style.display = element.style.display == "flex" ? "none" : "flex";
 }
 
 const innertext = document.querySelector(".circle-logo p");
