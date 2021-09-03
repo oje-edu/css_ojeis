@@ -1,5 +1,5 @@
 function toggleBox() {
-  var element = document.getElementById("toggle");
+  var element = document.querySelector(".toggle");
   element.style.display = element.style.display == "flex" ? "none" : "flex";
 }
 
