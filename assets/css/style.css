@@ -264,17 +264,18 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: var(--clr-grey-900);
   color: var(--clr-pink-300);
+  min-height: 100vh;
 }
 
 .wrapper {
-  min-height: 100vh;
+  height: 100%;
   max-width: 60em;
   width: 100%;
   margin: 0 auto;
 }
 
 nav {
-  height: 5vh;
+  /* height: 5vh; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -463,13 +464,13 @@ header .circle-logo {
 }
 
 .shadow-box {
-  display: none;
   position: relative;
   height: 50vh;
 
   background: linear-gradient(55deg, var(--clr-pink-300), var(--clr-teal-500));
 
-  /* display: flex; */
+  display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -497,10 +498,10 @@ header .circle-logo {
   filter: blur(1em);
 }
 
-.container {
+.ball-container {
   height: 100%;
   width: 95%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -724,12 +725,47 @@ header .circle-logo {
   box-shadow: 0 0 0.5em #000;
 }
 
+.canvas1-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  width: 95%;
+
+  font-size: 1em;
+
+  /* border: none;
+
+  overflow: hidden; */
+}
+
+#canvas1 {
+  height: 95%;
+  width: auto; /* border: 5px solid white; */
+}
+
+.controls {
+  display: flex;
+  margin-top: 0em;
+}
+
+.controls > input {
+  width: 60%;
+}
+.controls > label {
+  width: 35%;
+  color: white;
+  text-align: center;
+}
+
 footer {
   position: absolute;
-  bottom: 0;
-  left: 0;
   height: 5vh;
   width: 100%;
+
+  bottom: 0;
+  left: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -737,6 +773,7 @@ footer {
 
 .footer {
   position: relative;
+
   display: flex;
 
   align-items: center;

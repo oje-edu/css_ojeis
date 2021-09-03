@@ -33,7 +33,7 @@
         <div class="circle-text">
           <p>- Welcome to my Website - https://oje.is </p>
         </div>
-        <div class="circle-box font-effect-anaglyph" onclick="toggleBox()">
+        <div class="circle-box font-effect-anaglyph" onclick="toggleBall()">
         </div>
       </div>
 
@@ -41,7 +41,7 @@
 
     <main>
       <div class="shadow-box toggle">
-        <div class="container">
+        <div class="ball-container toggle-ball">
           <div class="box">
             <div class="tleft"></div>
             <div class="tright"></div>
@@ -65,23 +65,34 @@
             <div class="ball"></div>
           </div>
         </div>
+        <div class="canvas1-container toggle-canvas1">
+          <canvas id="canvas1"></canvas>
+          <div class="controls">
+            <label for="resolution" id="resolutionLabel">Auflösung: 5 px</label>
+            <input type="range" name="resolution" id="resolution" min="1" max="20" value="5">
+          </div>
+        </div>
       </div>
-    </main>
-    <footer>
-      <div class="footer">
-        <span style="--i:0;"></span>
-        <span style="--i:1;"></span>
-        <span style="--i:2;"></span>
-        <a href="https://oje.guru" target="_blank" rel="noopener noreferrer">
-          <p class="font-effect-anaglyph">©21 OJE.is</p>
-        </a>
-        <span style="--i:3;"></span>
-        <span style="--i:4;"></span>
-        <span style="--i:5;"></span>
-      </div>
-    </footer>
+
+
+  </div>
+  </main>
+  <footer>
+    <div class="footer">
+      <span style="--i:0;" onclick="toggleCanvas1()"></span>
+      <span style="--i:1;"></span>
+      <span style="--i:2;"></span>
+      <a href="https://oje.guru" target="_blank" rel="noopener noreferrer">
+        <p class="font-effect-anaglyph">©21 OJE.is</p>
+      </a>
+      <span style="--i:3;"></span>
+      <span style="--i:4;"></span>
+      <span style="--i:5;"></span>
+    </div>
+  </footer>
   </div>
   <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/canvas1.js"></script>
 </body>
 
 </html>
