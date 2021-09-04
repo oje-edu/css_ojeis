@@ -3,12 +3,16 @@ function toggleBall() {
   ball.style.display = ball.style.display == "flex" ? "none" : "flex";
   var canvas1 = document.getElementById("toggle-canvas1");
   canvas1.style.display = "none";
+  var header = document.getElementById("toggle-header");
+  header.style.display = "none";
 }
 function toggleCanvas1() {
   var canvas1 = document.getElementById("toggle-canvas1");
   canvas1.style.display = canvas1.style.display == "flex" ? "none" : "flex";
   var ball = document.getElementById("toggle-ball");
   ball.style.display = "none";
+  var header = document.getElementById("toggle-header");
+  header.style.display = "none";
 }
 
 const innertext = document.querySelector(".circle-logo p");

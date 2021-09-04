@@ -1,6 +1,7 @@
 /* change css2 to css for use google effects */
 @import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap&effect=anaglyph|fire-animation|3d|3d-float|emboss");
-@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap&effect=anaglyph");
+@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap&effect=anaglyph|fire-animation|emboss|neon");
+@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&family=Open+Sans:wght@300&display=swap&effect=anaglyph|fire-animation|emboss|neon");
 
 :root {
   --font-clr: #fff;
@@ -218,30 +219,30 @@
 
   --gradient-45: linear-gradient(
     45deg,
-    var(--clr-pink-300),
+    var(--clr-purple-600),
     var(--clr-teal-300),
-    var(--clr-pink-300),
+    var(--clr-purple-600),
     var(--clr-teal-300)
   );
   --gradient-500-45: linear-gradient(
     -45deg,
-    var(--clr-pink-300),
+    var(--clr-purple-600),
     var(--clr-teal-300),
-    var(--clr-pink-300),
+    var(--clr-purple-600),
     var(--clr-teal-300)
   );
   --gradient-135: linear-gradient(
     135deg,
-    var(--clr-pink-300),
+    var(--clr-purple-600),
     var(--clr-teal-300),
-    var(--clr-pink-300),
+    var(--clr-purple-600),
     var(--clr-teal-300)
   );
   --gradient-500-135: linear-gradient(
     -135deg,
-    var(--clr-pink-300),
+    var(--clr-purple-600),
     var(--clr-teal-300),
-    var(--clr-pink-300),
+    var(--clr-purple-600),
     var(--clr-teal-300)
   );
 
@@ -261,13 +262,15 @@
 }
 
 body {
+  min-height: 100vh;
   font-family: "Roboto", sans-serif;
   background-color: var(--clr-grey-900);
-  color: var(--clr-pink-300);
-  min-height: 100vh;
+  /* color: var(--clr-purple-600); */
+  color: var(--clr-purple-600);
 }
 
 .wrapper {
+  position: relative;
   height: 100%;
   max-width: 60em;
   width: 100%;
@@ -275,7 +278,7 @@ body {
 }
 
 nav {
-  /* height: 5vh; */
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -289,12 +292,8 @@ nav .nav-logo {
   margin: 0 0.2em;
 }
 
-.nav span {
-  margin: 0 0.8rem 0 0;
-}
-
-nav .contact {
-  background-color: var(--clr-pink-300);
+/* nav .contact {
+  background-color: var(--clr-purple-600);
   color: #000;
 
   padding: 0.4rem 1rem;
@@ -307,7 +306,7 @@ nav .contact {
 }
 
 nav .contact:hover {
-  color: var(--clr-pink-300);
+  color: var(--clr-purple-600);
   background-color: #000;
 
   cursor: pointer;
@@ -316,10 +315,86 @@ nav .contact:hover {
 nav .contact:active {
   box-shadow: 1px 2px 3px var(--clr-pink-300);
   transform: scaleX(0.7);
+} */
+
+.nav span a {
+  text-decoration: none;
+  color: inherit;
+}
+.nav span p {
+  text-align: center;
+}
+
+.nav span {
+  position: relative;
+  width: 25px;
+  height: 25px;
+
+  background-color: inherit;
+  box-shadow: -0.15em -0.15em 0.25em rgba(0, 0, 0, 1),
+    0.15em 0.15em 0.25em var(--clr-grey-800),
+    inset 0.1em 0.1em 0.15em var(--clr-grey-900),
+    inset -0.05em -0.05em 0.5em rgba(0, 0, 0, 1);
+
+  border: 0.25em solid inherit;
+  border-radius: 50%;
+
+  margin: 0 0.5em;
+}
+
+.nav span::before,
+.nav span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  box-shadow: inset 0.1em 0.1em 0.15em var(--clr-grey-800),
+    inset -0.05em -0.05em 0.5em rgba(0, 0, 0, 1);
+}
+
+.nav span::before {
+  /* background-color: var(--clr-purple-600); */
+
+  transform: scale(0);
+  animation: animateFooter 6s linear infinite,
+    animateFooterColor 5s linear infinite;
+  animation-delay: calc(var(--i) * 0.5s);
+}
+
+@keyframes animateFooter {
+  0%,
+  9.99%,
+  70.0001% {
+    transform: scale(0);
+  }
+  10%,
+  70% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animateFooterColor {
+  0% {
+    background-color: var(--clr-purple-600);
+    /* filter: hue-rotate(0deg); */
+  }
+  50% {
+    background-color: var(--clr-teal-300);
+  }
+  100% {
+    background-color: var(--clr-purple-600);
+    /* filter: hue-rotate(360deg); */
+  }
 }
 
 header {
-  height: 40vh;
+  position: relative;
+  height: 90vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -328,7 +403,6 @@ header {
   background-color: var(--clr-grey-900);
 
   font-size: 1em;
-  padding: 0 1rem;
 }
 
 header .circle {
@@ -355,7 +429,7 @@ header .circle-logo {
 @keyframes rotateInnerText {
   0% {
     transform: rotate(0deg) scale(1);
-    color: var(--clr-pink-300);
+    color: var(--clr-purple-600);
   }
   50% {
     transform: rotate(180deg) scale(0.5);
@@ -363,7 +437,7 @@ header .circle-logo {
   }
   100% {
     transform: rotate(360deg) scale(1);
-    color: var(--clr-pink-300);
+    color: var(--clr-purple-600);
   }
 }
 
@@ -380,7 +454,7 @@ header .circle-logo {
 @keyframes rotateText {
   0% {
     transform: rotate(360deg) scale(1);
-    color: var(--clr-pink-300);
+    color: var(--clr-purple-600);
   }
   50% {
     transform: rotate(180deg) scale(0.5);
@@ -388,7 +462,7 @@ header .circle-logo {
   }
   100% {
     transform: rotate(0deg) scale(1);
-    color: var(--clr-pink-300);
+    color: var(--clr-purple-600);
   }
 }
 
@@ -419,11 +493,12 @@ header .circle-logo {
   width: 8rem;
   height: 8rem;
 
-  color: white;
-  background-color: var(--clr-pink-200);
-  font-family: "Berkshire Swash", cursive;
-  font-size: 2.5em;
-  border: 0.25rem solid var(--clr-pink-200);
+  /* color: white; */
+  /* background-color: var(--clr-pink-200); */
+  /* font-family: "Berkshire Swash", cursive; */
+  font-family: "Calligraffitti", cursive;
+  font-size: 2.2em;
+  /* border: 0.25rem solid var(--clr-pink-200); */
   border-radius: 50%;
 
   outline: 0;
@@ -433,7 +508,7 @@ header .circle-logo {
 }
 
 .circle-box::before {
-  content: "Klick";
+  content: "ThOJE";
   width: 100%;
   height: 100%;
   display: flex;
@@ -465,14 +540,20 @@ header .circle-logo {
 
 .shadow-box {
   position: relative;
-  height: 50vh;
+  height: 80vh;
 
-  background: linear-gradient(55deg, var(--clr-pink-300), var(--clr-teal-500));
+  background: linear-gradient(
+    55deg,
+    var(--clr-purple-800),
+    var(--clr-pink-500)
+  );
 
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin: 2em 2em;
 
   border-radius: 1em;
   box-shadow: none;
@@ -499,7 +580,7 @@ header .circle-logo {
 }
 
 .ball-container {
-  height: 100%;
+  height: 95%;
   width: 95%;
   display: flex;
   flex-direction: column;
@@ -518,30 +599,32 @@ header .circle-logo {
 
 .box {
   display: flex;
-  height: 25vh;
+  height: 20vh;
   width: 100%;
 
   border: none;
 }
 
 .box .tleft {
-  height: 100%;
+  height: 20vh;
   width: 50%;
   background-image: var(--gradient-45);
   background-size: 800%;
 
   border: none;
+  border-top-left-radius: 0.25em;
 
   animation: leftBg 25s infinite alternate;
 }
 
 .box .tright {
-  height: 100%;
+  height: 20vh;
   width: 50%;
   background-image: var(--gradient-500-45);
   background-size: 800%;
 
   border: none;
+  border-top-right-radius: 0.25em;
 
   animation: rightBg 25s infinite alternate;
 }
@@ -561,6 +644,7 @@ header .circle-logo {
   background-size: 800%;
 
   border: none;
+  border-bottom-left-radius: 0.25em;
 
   animation: leftBg 25s infinite alternate;
 }
@@ -572,6 +656,7 @@ header .circle-logo {
   background-size: 800%;
 
   border: none;
+  border-bottom-right-radius: 0.25em;
 
   animation: rightBg 25s infinite alternate;
 }
@@ -609,12 +694,12 @@ header .circle-logo {
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  background: var(--clr-pink-300);
+  /* background: var(--clr-purple-600); */
 
   position: absolute;
   left: -0.5em;
   bottom: 1em;
-  background-image: radial-gradient(circle at top, var(--clr-pink-500), #000);
+  background-image: radial-gradient(circle at top, var(--clr-yellow-300), #000);
   animation: ballBounce var(--bounceSpeed) infinite ease-out,
     sceneRotate var(--rotateSpeed) infinite linear reverse;
 }
@@ -726,41 +811,49 @@ header .circle-logo {
 }
 
 .canvas1-container {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 95%;
-  width: 95%;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
 
   font-size: 1em;
-
-  /* border: none;
-
-  overflow: hidden; */
 }
 
 #canvas1 {
-  height: 95%;
-  width: auto; /* border: 5px solid white; */
-}
-
-.controls {
-  display: flex;
-  margin-top: 0em;
-}
-
-.controls > input {
-  width: 60%;
-}
-.controls > label {
-  width: 35%;
-  color: white;
-  text-align: center;
-}
-
-footer {
   position: absolute;
-  height: 5vh;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+
+.canvas1-container > .controls {
+  position: absolute;
+  bottom: 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 2em;
+  padding: 0 0.5em;
+}
+
+.canvas1-container .controls > input {
+  width: 40%;
+}
+
+.canvas1-container .controls > label {
+  width: 50%;
+  color: white;
+  text-align: left;
+}
+
+/* footer {
+  position: absolute;
+  height: 10vh;
   width: 100%;
 
   bottom: 0;
@@ -782,70 +875,20 @@ footer {
 a {
   text-decoration: none;
   color: inherit;
-}
+  margin: 0 0.5em;
+} */
 
-.footer span {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  margin: 0 10px;
-
-  background-color: inherit;
-  box-shadow: -0.15em -0.15em 0.25em rgba(0, 0, 0, 1),
-    0.15em 0.15em 0.25em var(--clr-grey-800),
-    inset 0.1em 0.1em 0.15em var(--clr-grey-900),
-    inset -0.05em -0.05em 0.5em rgba(0, 0, 0, 1);
-
-  border: 0.25em solid inherit;
-  border-radius: 50%;
-}
-
-.footer span::before,
-.footer span::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  border-radius: 50%;
-
-  box-shadow: inset 0.1em 0.1em 0.15em var(--clr-grey-800),
-    inset -0.05em -0.05em 0.5em rgba(0, 0, 0, 1);
-}
-
-.footer span::before {
-  /* background-color: var(--clr-pink-300); */
-
-  transform: scale(0);
-  animation: animateFooter 6s linear infinite,
-    animateFooterColor 5s linear infinite;
-  animation-delay: calc(var(--i) * 0.5s);
-}
-
-@keyframes animateFooter {
-  0%,
-  9.99%,
-  70.0001% {
-    transform: scale(0);
+@media (min-width: 40em) {
+  .wrapper {
+    max-width: 80rem;
   }
-  10%,
-  70% {
-    transform: scale(1);
-  }
-}
 
-@keyframes animateFooterColor {
-  0% {
-    background-color: var(--clr-pink-300);
-    /* filter: hue-rotate(0deg); */
+  .shadow-box {
+    width: 50%;
+    margin: 0 auto;
   }
-  50% {
-    background-color: var(--clr-teal-300);
-  }
-  100% {
-    background-color: var(--clr-pink-300);
-    /* filter: hue-rotate(360deg); */
+
+  .canvas1 {
+    width: 20%;
   }
 }
