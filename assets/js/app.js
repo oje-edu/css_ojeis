@@ -1,16 +1,14 @@
-function toggleBox() {
-  var element = document.querySelector(".toggle");
-  element.style.display = element.style.display == "flex" ? "none" : "flex";
-}
 function toggleBall() {
-  var ball = document.querySelector(".toggle-ball");
+  var ball = document.getElementById("toggle-ball");
   ball.style.display = ball.style.display == "flex" ? "none" : "flex";
-  toggleBox();
+  var canvas1 = document.getElementById("toggle-canvas1");
+  canvas1.style.display = "none";
 }
 function toggleCanvas1() {
-  var canvas1 = document.querySelector(".toggle-canvas1");
+  var canvas1 = document.getElementById("toggle-canvas1");
   canvas1.style.display = canvas1.style.display == "flex" ? "none" : "flex";
-  toggleBox();
+  var ball = document.getElementById("toggle-ball");
+  ball.style.display = "none";
 }
 
 const innertext = document.querySelector(".circle-logo p");
